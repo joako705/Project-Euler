@@ -1,7 +1,7 @@
 //10,001st prime number
 
 #include <iostream>
-#include "helpers/primes.cpp"
+#include "../helpers/primes.cpp"
 using namespace std;
 
 main() {

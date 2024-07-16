@@ -1,7 +1,7 @@
 //sum of all the primes below 2 million
 
 #include <iostream>
-#include "helpers/primes.cpp"
+#include "../helpers/primes.cpp"
 using namespace std;
 
 main() {
