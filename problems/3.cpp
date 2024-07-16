@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <vector>
-#include "helpers/primes.cpp"
+#include "../helpers/primes.cpp"
 using namespace std;
 
 main() {
