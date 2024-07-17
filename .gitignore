@@ -1,8 +1,2 @@
 .vscode/
-.vscode/settings.json
-problems/output
-problems/output/1.exe
-problems/output/2.exe
-problems/output/3.exe
-problems/output/7.exe
-problems/output/10.exe
+problems/output/
