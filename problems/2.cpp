@@ -7,9 +7,7 @@ int sum_even_fibs(int limit) {
     int a = 0, b = 1, sum = 0;
 
     while (b <= limit) {
-        if (b % 2 == 0) {
-            sum += b;
-        }
+        if (b % 2 == 0) sum += b;
 
         int temp = a;
         a = b;
