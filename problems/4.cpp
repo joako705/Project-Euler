@@ -23,5 +23,5 @@ main() {
         }
     }
 
-    cout << "Biggest palindrome made from the product of two 3-digit numbers: " << biggest << endl;
+    cout << "Biggest palindrome made from the product of two 3-digit numbers: " << biggest;
 }
