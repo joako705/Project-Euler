@@ -9,7 +9,7 @@ main() {
     int biggest = 0;
 
     for (int i = 100; i <= 999; i++) {
-        for (int j = i; j <= 999; j++) { // Nested loop to check all combinations
+        for (int j = i; j <= 999; j++) { //nested loop to check all combinations
             int product = i*j;
 
             string test_pal = to_string(product);
