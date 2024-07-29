@@ -8,7 +8,7 @@ def get_alphabet_pos(letter):
     elif 'a' <= letter <= 'z': return ((ord(letter) - ord('a')) + 1)
     else: return None #in case it doesn't get a letter as input
 
-with open("C:/Users/jpere/OneDrive/Desktop/Project-Euler/helpers/names.txt") as file:
+with open("C:/Users/jpere/Documents/code/Project-Euler/helpers/22_names.txt") as file:
     long_ass_str = file.read()
     names = long_ass_str.split(',') #make a list of all the names by splitting the long ass string at the commas
 
