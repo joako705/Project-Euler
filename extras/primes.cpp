@@ -60,21 +60,3 @@ std::vector<long long> prime_factors(long long num) {
 
     return factors;
 }
-
-long long sum_primes(long long num) {
-    long long sum = 0;
-    std::vector<long long> primes = find_primes(num);
-
-    for (auto &num : primes) sum += num;
-
-    return sum;
-}
-
-long long sum_prime_factors(long long num) {
-    long long sum = 0;
-    std::vector<long long> factors = prime_factors(num);
-
-    for (auto &num : factors) sum += num;
-
-    return sum;
-}

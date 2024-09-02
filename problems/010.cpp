@@ -6,6 +6,11 @@
 #include "../extras/primes.cpp"
 
 int main() {
-    std::cout << "Sum of all the primes below 2 million: " << sum_primes(2000000) << std::endl;
+    long long sum = 0;
+    std::vector<long long> primes = find_primes(2000000);
+
+    for (auto &num : primes) sum += num;
+
+    std::cout << "Sum of all the primes below 2 million: " << sum << std::endl;
     return 0;
 }
