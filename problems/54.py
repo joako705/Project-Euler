@@ -1,7 +1,9 @@
-#the "54_poker.txt" file has 1000 random hands dealt to two players. how many hands does player 1 win?
+# Problem URL: https://projecteuler.net/problem=54
+# ----------------------------------------------------------------------------------------------------------
+# "54_poker.txt" has 1000 random poker hands dealt to two players. How many hands does Player 1 win?
 
 from enum import Enum
-with open("C:/Users/jpere/Documents/code/Project-Euler/helpers/54_poker.txt") as file:
+with open("C:/Users/jpere/Documents/code/Project-Euler/extras/54_poker.txt") as file:
     text = file.readlines()
 
 class rank(Enum):

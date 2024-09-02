@@ -1,12 +1,13 @@
-//sum of all the even fibonacci numbers below a certain limit
+// Problem URL: https://projecteuler.net/problem=2
+// --------------------------------------------------------------------------
+// Find the sum of all the even Fibonacci numbers below 4 million
 
 #include <iostream>
-using namespace std;
 
-int sum_even_fibs(int limit) {
+int sum_even_fibs(int max_value) {
     int a = 0, b = 1, sum = 0;
 
-    while (b <= limit) {
+    while (b <= max_value) {
         if (b % 2 == 0) sum += b;
 
         int temp = a;
@@ -17,11 +18,9 @@ int sum_even_fibs(int limit) {
     return sum;
 }
 
-main() {
-    int limit = 0;
+int main() {
+    const int max_value = 4000000;
 
-    cout << "Enter the limit: ";
-    cin >> limit;
-
-    cout << "Sum of all Fibonacci numbers below " << limit << ": " << sum_even_fibs(limit);
+    std::cout << "Sum of all Fibonacci numbers below " << max_value << ": " << sum_even_fibs(max_value) << std::endl;
+    return 0;
 }

@@ -1,16 +1,17 @@
-//smallest number evenly divisible by all numbers from 1 to 20
+// Problem URL: https://projecteuler.net/problem=5
+// ------------------------------------------------------------------------------------
+// Find the smallest number evenly divisible by all numbers from 1 to 20
 
 #include <iostream>
-using namespace std;
 
-main() {
+int main() {
     int num = 20;
     
     while (true) {
         bool found = true;
         
         for (int i = 1; i <= 20; i++) {
-            if (num%i != 0) {
+            if (num % i != 0) {
                 num++;
                 found = false;
                 break;
@@ -20,5 +21,6 @@ main() {
         if (found) break;
     }
 
-    cout << "Smallest number evenly divisible by all numbers from 1 to 20: " << num;
+    std::cout << "Smallest number evenly divisible by all numbers from 1 to 20: " << num << std::endl;
+    return 0;
 }

@@ -1,11 +1,12 @@
-#find the sum of the digits of 2^1000
-#once again in python bc of the size of the number
+# Problem URL: https://projecteuler.net/problem=16
+# -----------------------------------------------------------
+# Find the sum of the digits of 2^1000
 
 sum = 0
 big_ass_num = 2**1000
 string = str(big_ass_num)
 
-for char in string:
-    sum += int(char)
+for digit in string:
+    sum += int(digit)
 
-print(f"The sum of the digits of 2^1000 is: {sum}")
+print(f"Sum of the digits of 2^1000: {sum}")

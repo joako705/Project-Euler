@@ -1,17 +1,18 @@
-//10,001st prime number
+// Problem URL: https://projecteuler.net/problem=7
+// -------------------------------------------------------------------
+// Find the 10,001st prime number
 
 #include <iostream>
-#include "../helpers/primes.cpp"
-using namespace std;
+#include "../extras/primes.cpp"
 
-main() {
-    int count = 0, i = 2;
+int main() {
+    int count = 0, num = 2;
 
     while (count < 10001) {
-        if (prime_Checker(i)) count++;
-        
-        i++;
+        if (is_prime(num)) count++;
+        num++;
     }
 
-    cout << "10,001st prime number: " << i-1;
+    std::cout << "10,001st prime number: " << num - 1 << std::endl;
+    return 0;
 }

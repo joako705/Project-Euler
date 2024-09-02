@@ -1,4 +1,6 @@
-#for a, b < 100, what is the maximum digital sum of a^b?
+# Problem URL: https://projecteuler.net/problem=56
+# ----------------------------------------------------------------
+# For natural numbers a, b < 100, what is the maximum digital sum of a^b?
 
 max_sum = 0
 
@@ -11,4 +13,4 @@ for a in range(1, 100):
         
         if max_sum < sum: max_sum = sum
     
-print(max_sum)
+print(f"Maxmimum digital sum of a^b (for a, b < 100): {max_sum}")

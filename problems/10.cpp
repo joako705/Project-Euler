@@ -1,9 +1,11 @@
-//sum of all the primes below 2 million
+// Problem URL: https://projecteuler.net/problem=10
+// -----------------------------------------------------------------------
+// Find the sum of all the primes below 2 million
 
 #include <iostream>
-#include "../helpers/primes.cpp"
-using namespace std;
+#include "../extras/primes.cpp"
 
-main() {
-    cout << "Sum of all the primes below 2 million: " << sum_primes(2000000);
+int main() {
+    std::cout << "Sum of all the primes below 2 million: " << sum_primes(2000000) << std::endl;
+    return 0;
 }

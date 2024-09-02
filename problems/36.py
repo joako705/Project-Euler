@@ -1,4 +1,6 @@
-#find the sum of all numbers, less than 1 million, which are palindromic in base 10 and base 2
+# Problem URL: https://projecteuler.net/problem=36
+# ---------------------------------------------------------------------------------------------------
+# Find the sum of all numbers, under 1 million, which are palindromic in base 10 and base 2
 
 double_pals = []
 sum_pals = 0
@@ -14,4 +16,4 @@ for pal in double_pals:
     sum_pals += pal
 
 print(double_pals)
-print(f"The sum of all double palindromes (base 10 and base 2) under 1 million is: {sum_pals}")
+print(f"Sum of all double palindromes (base 10 & base 2) under 1 million is: {sum_pals}")

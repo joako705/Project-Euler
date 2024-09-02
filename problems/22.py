@@ -1,35 +1,42 @@
-#find the sum of the scores of the names in the file
-#name score = sum of the position in the alphabet of each letter in the name * the position of the name in the list
+# Problem URL: https://projecteuler.net/problem=22
+# ---------------------------------------------------------------------------------------------------------------------
+# Find the sum of the scores of all the names in "22_names.txt"
+# "score" = sum of the position in the alphabet of each letter in the name * the position of the name in the list
+
+# can't use a simple relative path bc python.exe is 5543651342 miles away on my drive
+file_path = "C:/Users/jpere/Documents/code/Project-Euler/extras/22_names.txt"
+
+# read the file, split it at the commas, strip the double quotes around each name, and sort the list
+with open(file_path) as file:
+    long_ass_str = file.read()
+    names = long_ass_str.split(',')
+
+    for i in range(len(names)):
+        names[i] = names[i].strip('""')
+    
+    names = sorted(names)
 
 def get_alphabet_pos(letter):
-    #this converts the letter to it's ascii value with ord() and then subtracts the ascii value of 'A' (or 'a' if it's lowercase)
-    #checks if the letter is "between" A and Z (god bless python's weird ass string arithmetic)
+    # this checks if the letter is "between" A and Z (using the the ASCII values)
+    # then converts the letter to it's ASCII value with ord(), and then subtracts the ASCII value of 'A' (or 'a' if it's lowercase)
     if 'A' <= letter <= 'Z': return ((ord(letter) - ord('A')) + 1)
     elif 'a' <= letter <= 'z': return ((ord(letter) - ord('a')) + 1)
-    else: return None #in case it doesn't get a letter as input
 
-with open("C:/Users/jpere/Documents/code/Project-Euler/helpers/22_names.txt") as file:
-    long_ass_str = file.read()
-    names = long_ass_str.split(',') #make a list of all the names by splitting the long ass string at the commas
+def find_sum():
+    scores = []
+    sum_scores = 0
 
-#get rid of the double quotes surrounding each name
-for i in range(len(names)):
-    names[i] = names[i].replace('"', '')
+    for i in range(len(names)):
+        temp_score = 0
+        for letter in names[i]:
+            temp_score += get_alphabet_pos(letter)
+        
+        temp_score *= i + 1
+        scores.append(temp_score)
 
-names = sorted(names)
-
-scores = []
-sum_scores = 0
-
-for i in range(len(names)):
-    temp_score = 0
-    for char in names[i]:
-        temp_score += get_alphabet_pos(char)
+    for score in scores:
+        sum_scores += score
     
-    temp_score *= i+1
-    scores.append(temp_score)
+    return sum_scores
 
-for score in scores:
-    sum_scores += score
-
-print(f"The sum of all the name scores is: {sum_scores}")
+print(f"Sum of all the name scores: {find_sum()}")

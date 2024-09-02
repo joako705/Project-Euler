@@ -1,20 +1,21 @@
-//the largest prime factor of a specific number
+// Problem URL: https://projecteuler.net/problem=3
+// --------------------------------------------------------------------------
+// Find the largest prime factor of the given number
 
 #include <iostream>
 #include <vector>
-#include "../helpers/primes.cpp"
-using namespace std;
+#include "../extras/primes.cpp"
 
-main() {
-    long long num = 0, biggest = 0;
-    cout << "Enter the number: ";
-    cin >> num;
+int main() {
+    const long long num = 600851475143;
+    int biggest = 0;
 
-    vector<long long> factors = prime_Factors(num);
+    std::vector<long long> factors = prime_factors(num);
 
     for (auto &factor : factors) {
-        biggest = max(biggest, factor);
+        if (factor > biggest) biggest = factor;
     }
 
-    cout << "Biggest prime factor of " << num << ": " << biggest;
+    std::cout << "Biggest prime factor of " << num << ": " << biggest << std::endl;
+    return 0;
 }

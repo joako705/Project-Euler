@@ -1,11 +1,13 @@
-#find the sum of the digits in 100!
+# Problem URL: https://projecteuler.net/problem=20
+# --------------------------------------------------------
+# Find the sum of the digits in 100!
 
 import math
 
 sum = 0
 digits = str(math.factorial(100))
 
-for char in digits:
-    sum += int(char)
+for digit in digits:
+    sum += int(digit)
 
-print(sum)
+print(f"Sum of the digits in 100!: {sum}")

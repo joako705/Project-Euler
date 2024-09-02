@@ -1,5 +1,8 @@
-//reversible numbers: numbers for which (n + reverse(n)) has only odd numbers
-//find how many reversible numbers exist below 1 billion
+// Problem URL: https://projecteuler.net/problem=145
+// -------------------------------------------------------------------------------------------
+// Reversible numbers: numbers for which (n + reverse(n)) has only odd numbers
+// -------------------------------------------------------------------------------------------
+// Find how many reversible numbers exist below 1 billion
 
 #include <iostream>
 #include <cmath>

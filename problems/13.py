@@ -1,5 +1,7 @@
-#find the first 10 digits of the sum of all the 50-digit numbers
-#used python for this one bc c++ was bitching about the size of the numbers
+# Problem URL: https://projecteuler.net/problem=13
+# -----------------------------------------------------------------------
+# Find the first 10 digits of the sum of all the 50-digit numbers
+# I used python for this one bc C++ was bitching about the size of the numbers
 
 big_ass_num = 0
 
@@ -109,5 +111,5 @@ nums = [
 for num in nums:
     big_ass_num += num
 
-test = str(big_ass_num)
-print(f"The first 10 digits of the sum of all those numbers are: {test[0:10]}")
+result = str(big_ass_num)
+print(f"The first 10 digits of the sum of all those numbers are {result[0:10]}")

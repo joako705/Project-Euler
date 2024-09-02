@@ -1,27 +1,28 @@
-//find the sum of all the truncatable primes
-//truncatable primes are primes that can continuously have their digits removed from either end and still be prime
+// Problem URL: https://projecteuler.net/problem=37
+// -----------------------------------------------------------------------------------------------------------------------
+// Find the sum of all the truncatable primes
+// Truncatable primes are primes that can continuously have their digits removed from either end and still be prime
 
 #include <iostream>
 #include <algorithm>
 #include <string>
 #include <vector>
-#include "../helpers/primes.cpp"
-using namespace std;
+#include "../extras/primes.cpp"
 
-main() {
-    vector<long long> primes = prime_Finder(1000000);
-    vector<long long> truncatable;
+int main() {
+    std::vector<long long> primes = find_primes(1000000);
+    std::vector<long long> truncatable;
     long long sum_truncs = 0;
 
     for (auto &num : primes) {
-        string str_num = to_string(num);
-        vector<bool> tests(str_num.size(), true);
+        std::string str_num = std::to_string(num);
+        std::vector<bool> tests(str_num.size(), true);
 
         for (unsigned int i = 0; i < str_num.size(); i++) {
-            string left = str_num.substr(i);
-            string right = str_num.substr(0, str_num.size()-i);
+            std::string left = str_num.substr(i);
+            std::string right = str_num.substr(0, str_num.size()-i);
 
-            if (!prime_Checker(stoll(left)) || !prime_Checker(stoll(right))) {
+            if (!is_prime(stoll(left)) || !is_prime(stoll(right))) {
                 tests[i] = false;
                 break;
             }
@@ -32,5 +33,6 @@ main() {
 
     for (unsigned int i = 4; i < truncatable.size(); i++) sum_truncs += truncatable[i];
 
-    cout << "The sum of all truncatable primes is: " << sum_truncs;
+    std::cout << "The sum of all truncatable primes is: " << sum_truncs << std::endl;
+    return 0;
 }

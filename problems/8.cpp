@@ -1,11 +1,12 @@
-//find the 13 adjacent digits in the big ass number (1000 digits long) that have the biggest product
+// Problem URL: https://projecteuler.net/problem=8
+// -------------------------------------------------------------------------------------------------------------------
+// Find the 13 adjacent digits in the big ass number (1000 digits long) that have the biggest product
 
 #include <iostream>
 #include <vector>
-using namespace std;
 
-main() {
-    vector<int> num = {
+int main() {
+    std::vector<int> num = {
         7,3,1,6,7,1,7,6,5,3,1,3,3,0,6,2,4,9,1,9,2,2,5,1,1,9,6,7,4,4,2,6,5,7,4,7,4,2,3,5,5,3,4,9,1,9,4,9,3,4,
         9,6,9,8,3,5,2,0,3,1,2,7,7,4,5,0,6,3,2,6,2,3,9,5,7,8,3,1,8,0,1,6,9,8,4,8,0,1,8,6,9,4,7,8,8,5,1,8,4,3,
         8,5,8,6,1,5,6,0,7,8,9,1,1,2,9,4,9,4,9,5,4,5,9,5,0,1,7,3,7,9,5,8,3,3,1,9,5,2,8,5,3,2,0,8,8,0,5,5,1,1,
@@ -40,5 +41,6 @@ main() {
         if (biggest_product < temp_product) biggest_product = temp_product;
     }
 
-    cout << "The biggest product of 13 adjacent digits in the big ass number is: " << biggest_product;
+    std::cout << "The biggest product of 13 adjacent digits in the big ass number is: " << biggest_product << std::endl;
+    return 0;
 }
