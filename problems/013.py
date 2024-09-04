@@ -1,7 +1,6 @@
 # Problem URL: https://projecteuler.net/problem=13
 # -----------------------------------------------------------------------
 # Find the first 10 digits of the sum of all the 50-digit numbers
-# I used python for this one bc C++ was bitching about the size of the numbers
 
 big_ass_num = 0
 

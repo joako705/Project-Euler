@@ -14,12 +14,12 @@ std::vector<long long> prime_factors(long long num);
 
 bool is_prime(long long num) {
     // skip 0, 1, and all even numbers except for 2
-    if ((num <= 1) || (num % 2 == 0)) return false;
     if (num == 2) return true;
+    if ((num <= 1) || (num % 2 == 0)) return false;
 
     // only check odd divisors + only check up to the square root of the number
     for (long long i = 3; i <= sqrt(num); i += 2) {
-        if (num%i == 0) return false;
+        if (num % i == 0) return false;
     }
 
     return true;
