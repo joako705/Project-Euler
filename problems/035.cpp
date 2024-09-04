@@ -7,7 +7,7 @@
 #include <algorithm>
 #include <vector>
 #include <string>
-#include "../extras/primes.cpp"
+#include "../extras/helpers.cpp"
 
 std::vector<long long> find_rotations(long long n) {
     std::vector<long long> rotations;

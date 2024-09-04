@@ -3,7 +3,7 @@
 // Find the sum of all the primes below 2 million
 
 #include <iostream>
-#include "../extras/primes.cpp"
+#include "../extras/helpers.cpp"
 
 int main() {
     long long sum = 0;

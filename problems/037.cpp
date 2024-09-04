@@ -7,7 +7,7 @@
 #include <algorithm>
 #include <string>
 #include <vector>
-#include "../extras/primes.cpp"
+#include "../extras/helpers.cpp"
 
 int main() {
     std::vector<long long> primes = find_primes(1000000);

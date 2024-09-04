@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include <vector>
-#include "../extras/primes.cpp"
+#include "../extras/helpers.cpp"
 
 int main() {
     const long long num = 600851475143;

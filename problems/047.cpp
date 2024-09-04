@@ -5,7 +5,7 @@
 #include <iostream>
 #include <vector>
 #include <set>
-#include "../extras/primes.cpp"
+#include "../extras/helpers.cpp"
 
 int main() {
     int counter = 0;

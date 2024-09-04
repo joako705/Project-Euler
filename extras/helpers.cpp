@@ -1,6 +1,9 @@
 #include <cmath>
 #include <vector>
 
+// Finds the sum of all divisors of a number
+long long sum_divisors(long long num);
+
 // Checks if a number is prime
 bool is_prime(long long num); 
 
@@ -11,6 +14,16 @@ std::vector<long long> find_primes(long long num);
 std::vector<long long> prime_factors(long long num);
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+long long sum_divisors(long long num) {
+    long long div_sum = 0;
+
+    for (long long i = 1; i < num; i++) {
+        if (num % i == 0) div_sum += i;
+    }
+
+    return div_sum;
+}
 
 bool is_prime(long long num) {
     // skip 0, 1, and all even numbers except for 2

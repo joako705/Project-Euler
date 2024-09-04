@@ -5,16 +5,7 @@
 
 #include <iostream>
 #include <vector>
-
-int sum_divisors(int num) {
-    int div_sum = 0;
-
-    for (int i = 1; i < num; i++) {
-        if (num % i == 0) div_sum += i;
-    }
-
-    return div_sum;
-}
+#include "../extras/helpers.cpp"
 
 bool are_amicable(int a, int b) {
     return (sum_divisors(a) == b) && (sum_divisors(b) == a);

@@ -3,7 +3,7 @@
 // Find the 10,001st prime number
 
 #include <iostream>
-#include "../extras/primes.cpp"
+#include "../extras/helpers.cpp"
 
 int main() {
     int count = 0, num = 2;
