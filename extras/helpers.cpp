@@ -26,7 +26,7 @@ long long sum_divisors(long long num) {
 }
 
 bool is_prime(long long num) {
-    // skip 0, 1, and all even numbers except for 2
+    // skip 0, 1, and all even numbers except for 2 (and negative numbers)
     if (num == 2) return true;
     if ((num <= 1) || (num % 2 == 0)) return false;
 
