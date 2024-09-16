@@ -1,4 +1,5 @@
 #include <vector>
+#include <cmath>
 
 // Finds the sum of all divisors of a number
 long long sum_divisors(long long num);
@@ -18,10 +19,18 @@ std::vector<long long> prime_factors(long long num);
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 long long sum_divisors(long long num) {
-    long long div_sum = 0;
+    if (num <= 1) return 0;
 
-    for (long long i = 1; i < num; i++) {
-        if (num % i == 0) div_sum += i;
+    long long div_sum = 1; // 1 is a divisor of any number
+    long long sqrt_num = llround(sqrt(num)); // only check up to the square root of the number
+
+    for (long long i = 2; i <= sqrt_num; i++) {
+        if (num % i == 0) {
+            div_sum += i;
+            if (i != num/i) {
+                div_sum += num/i;
+            }
+        }
     }
 
     return div_sum;
