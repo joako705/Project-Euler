@@ -1,13 +1,15 @@
-#include <cmath>
 #include <vector>
 
 // Finds the sum of all divisors of a number
 long long sum_divisors(long long num);
 
 // Checks if a number is prime
-bool is_prime(long long num); 
+bool is_prime(long long num);
 
-// Finds all the prime numbers up to the given number using the Sieve of Eratosthenes
+// Uses Sieve of Eratosthenes to find all the primes up to the given number
+std::vector<bool> prime_sieve(long long num);
+
+// Returns all the prime numbers up to the given number as a vector using prime_sieve()
 std::vector<long long> find_primes(long long num);
 
 // Finds all the prime factors of a number
@@ -31,26 +33,32 @@ bool is_prime(long long num) {
     if ((num <= 1) || (num % 2 == 0)) return false;
 
     // only check odd divisors + only check up to the square root of the number
-    for (long long i = 3; i <= sqrt(num); i += 2) {
+    for (long long i = 3; i*i <= num; i += 2) {
         if (num % i == 0) return false;
     }
 
     return true;
 }
 
-std::vector<long long> find_primes(long long num) {
-    std::vector<long long> primes;
+std::vector<bool> prime_sieve(long long num) {
     std::vector<bool> sieve(num+1, true);
 
     sieve[0] = sieve[1] = false; // 0 and 1 aren't prime
 
-    for (long long i = 2; i <= sqrt(num); i++) {
+    for (long long i = 2; i*i <= num; i++) {
         if (sieve[i]) {
             for (long long j = i*i; j <= num; j += i) {
                 sieve[j] = false;
             }
         }
     }
+
+    return sieve;
+}
+
+std::vector<long long> find_primes(long long num) {
+    std::vector<long long> primes;
+    std::vector<bool> sieve = prime_sieve(num);
 
     for (long long i = 2; i <= num; i++) {
         if (sieve[i]) primes.push_back(i);
