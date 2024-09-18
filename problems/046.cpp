@@ -5,7 +5,7 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
-#include "../extras/helpers.cpp"
+#include "extras/euler_funcs.h"
 
 bool check_conjecture(int num, const std::vector<bool> &prime_cache) {
     for (int i = 2; i < num; i++) {

@@ -7,7 +7,7 @@
 #include <algorithm>
 #include <string>
 #include <vector>
-#include "../extras/helpers.cpp"
+#include "extras/euler_funcs.h"
 
 int main() {
     std::vector<long long> primes = find_primes(1000000);

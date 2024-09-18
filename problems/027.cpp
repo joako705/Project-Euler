@@ -6,7 +6,7 @@
 
 #include <iostream>
 #include <cmath>
-#include "../extras/helpers.cpp"
+#include "extras/euler_funcs.h"
 
 int main() {
     int max_a = 0, max_b = 0, consecutive = 0;

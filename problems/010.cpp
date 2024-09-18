@@ -3,7 +3,7 @@
 // Find the sum of all the primes below 2 million
 
 #include <iostream>
-#include "../extras/helpers.cpp" // for find_primes()
+#include "extras/euler_funcs.h" // for find_primes()
 
 int main() {
     const int Limit = 2000000;

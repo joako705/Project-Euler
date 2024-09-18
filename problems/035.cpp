@@ -7,7 +7,7 @@
 #include <algorithm>
 #include <vector>
 #include <string>
-#include "../extras/helpers.cpp"
+#include "extras/euler_funcs.h"
 
 std::vector<long long> find_rotations(long long n) {
     std::vector<long long> rotations;

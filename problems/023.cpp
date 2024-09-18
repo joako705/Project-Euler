@@ -4,7 +4,7 @@
 // Find the total_sum of all the positive integers which cannot be written as the total_sum of two abundant numbers
 
 #include <iostream>
-#include "../extras/helpers.cpp"
+#include "extras/euler_funcs.h"
 
 bool is_abundant(int num) {
     return sum_divisors(num) > num;

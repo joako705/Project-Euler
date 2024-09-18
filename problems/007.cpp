@@ -3,7 +3,7 @@
 // Find the 10,001st prime number
 
 #include <iostream>
-#include "../extras/helpers.cpp" // for is_prime()
+#include "extras/euler_funcs.h" // for is_prime()
 
 int main() {
     const int PrimeIndex = 100;

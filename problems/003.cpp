@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include <vector>
-#include "../extras/helpers.cpp" // for prime_factors()
+#include "extras/euler_funcs.h" // for prime_factors()
 
 int main() {
     const long long BigNum = 600851475143; // the number given by the problem

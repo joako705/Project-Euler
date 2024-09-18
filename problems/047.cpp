@@ -5,7 +5,7 @@
 #include <iostream>
 #include <vector>
 #include <set>
-#include "../extras/helpers.cpp"
+#include "extras/euler_funcs.h"
 
 int main() {
     int counter = 0;

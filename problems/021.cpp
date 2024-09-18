@@ -5,7 +5,7 @@
 // Find the sum of all amicable numbers below 10000
 
 #include <iostream>
-#include "../extras/helpers.cpp" // for sum_divisors()
+#include "extras/euler_funcs.h" // for sum_divisors()
 
 int main() {
     const int Limit = 1000;
