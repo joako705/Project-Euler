@@ -1,10 +1,8 @@
 # Problem URL: https://projecteuler.net/problem=13
-# -----------------------------------------------------------------------
+# ---------------------------------------------------------------------------------
 # Find the first 10 digits of the sum of all the 50-digit numbers
 
-big_ass_num = 0
-
-nums = [
+NumList = [
     37107287533902102798797998220837590246510135740250,
     46376937677490009712648124896970078050417018260538,
     74324986199524741059474233309513058123726617309629,
@@ -107,8 +105,12 @@ nums = [
     53503534226472524250874054075591789781264330331690
 ]
 
-for num in nums:
-    big_ass_num += num
+big_sum = 0
 
-result = str(big_ass_num)
-print(f"The first 10 digits of the sum of all those numbers are {result[0:10]}")
+# add up all the numbers
+for num in NumList:
+    big_sum += num
+
+# convert the sum to a string, and use string slicing to only print the first 10 digits
+result = str(big_sum)
+print(f"First 10 digits of the sum of all 50-digit numbers: {result[0:10]}")

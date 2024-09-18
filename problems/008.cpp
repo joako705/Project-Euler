@@ -1,12 +1,13 @@
 // Problem URL: https://projecteuler.net/problem=8
-// -------------------------------------------------------------------------------------------------------------------
-// Find the 13 adjacent digits in the big ass number (1000 digits long) that have the biggest product
+// --------------------------------------------------------------------------------
+// Find the 13 adjacent digits in the 1000-digit long number that have the biggest product
 
 #include <iostream>
 #include <vector>
 
 int main() {
-    std::vector<int> num = {
+    // save each digit of the number as an element in an array:
+    const std::vector<int> BigNum = {
         7,3,1,6,7,1,7,6,5,3,1,3,3,0,6,2,4,9,1,9,2,2,5,1,1,9,6,7,4,4,2,6,5,7,4,7,4,2,3,5,5,3,4,9,1,9,4,9,3,4,
         9,6,9,8,3,5,2,0,3,1,2,7,7,4,5,0,6,3,2,6,2,3,9,5,7,8,3,1,8,0,1,6,9,8,4,8,0,1,8,6,9,4,7,8,8,5,1,8,4,3,
         8,5,8,6,1,5,6,0,7,8,9,1,1,2,9,4,9,4,9,5,4,5,9,5,0,1,7,3,7,9,5,8,3,3,1,9,5,2,8,5,3,2,0,8,8,0,5,5,1,1,
@@ -30,17 +31,17 @@ int main() {
     };
     
     long long biggest_product = 0;
-    long long temp_product = 1;
+    long long temp = 1;
 
-    for (unsigned int i = 0; i < num.size() - 12; i++) {
-        temp_product = 1;
-        for (unsigned int j = i; j <= i+12; j++) {
-            temp_product *= num[j];
+    for (unsigned int i = 0; i < BigNum.size()-12; i++) { // iterate until the size of the vector-12 to avoid out of bounds when adding 12 in the nested loop
+        temp = 1;
+        for (unsigned int j = i; j <= i+12; j++) { // iterate over the current number + the next 12 to get the 13-number product
+            temp *= BigNum[j];
         }
 
-        if (biggest_product < temp_product) biggest_product = temp_product;
+        if (biggest_product < temp) biggest_product = temp;
     }
 
-    std::cout << "The biggest product of 13 adjacent digits in the big ass number is: " << biggest_product << std::endl;
+    std::cout << "Biggest product of 13 adjacent digits in the 1000-digit number: " << biggest_product << std::endl;
     return 0;
 }

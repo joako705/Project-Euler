@@ -1,5 +1,5 @@
 // Problem URL: https://projecteuler.net/problem=17
-// -------------------------------------------------------------
+// ---------------------------------------------------------------------------------
 // If all the numbers from to 1 to 1000 (inclusive) were written out in words, how many letters would be used?
 
 #include <iostream>
@@ -30,13 +30,14 @@ std::string to_word(int num) {
         {19, "nineteen"},
     };
 
-    if (num >= 1 && num < 20) return num_words[num]; // just return the word stored in the dictionary
+    // if the number's an easy case, just return the word stored in the dictionary
+    if (num >= 1 && num < 20) return num_words[num];
 
     else if (num >= 20 && num < 100) {
         int ones = num % 10; // find the number in the ones place
-        int tens = num / 10; // find the number in the tens place (by casting the result to an int)
+        int tens = int(num / 10); // find the number in the tens place  (cast the result to an int)
 
-        // if there's nothing in the ones place, leave it blank; else add a hyphen and that number's value stored in the dictionary
+        // if the ones place is a 0, leave it blank; else add a hyphen and that number's value stored in the dictionary
         std::string ones_word = (ones == 0) ? "" : "-" + num_words[ones];
 
         switch (tens) {
@@ -55,14 +56,19 @@ std::string to_word(int num) {
     else if (num >= 100 && num < 1000) {
         // same concept as numbers below 100, except with recursion to deal with the tens place
         int ones_tens = num % 100;
-        int hundreds = num / 100;
+        int hundreds = int(num / 100);
+
+        // since ones_tens could be anything between 0 and 100, recursively call the function to convert that number to a word
         std::string ones_tens_word = (ones_tens == 0) ? "" : " and " + to_word(ones_tens);
 
         return num_words[hundreds] + " hundred" + ones_tens_word;
     }
 
-    else return "one thousand";
-    return ""; // honestly can't be fucked making more ifs for numbers bigger than 1000, so i'm just leaving it like this
+    else if (num == 1000) return "one thousand"; // handle the last easy case
+
+    // honestly can't be fucked making more ifs for numbers bigger than 1000 or negative numbers
+    // so if something else was input into the function, it'll just return an empty string
+    return "";
 }
 
 int count_letters(std::string num_word) {
