@@ -2,14 +2,13 @@
 # ---------------------------------------------------------------------------------
 # Find the sum of the digits in 100!
 
-# python makes things too easy sometimes
 from math import factorial
 
-sum = 0
+result = 0
 
-# convert the result to a string, iterate through ea
+# convert the result to a string, iterate through each digit and add it to the sum
 digits = str(factorial(100)) 
 for digit in digits:
-    sum += int(digit)
+    result += int(digit)
 
-print(f"Sum of the digits in 100!: {sum}")
+print(f"Sum of the digits in 100!: {result}")
