@@ -1,26 +1,23 @@
 // Problem URL: https://projecteuler.net/problem=21
-// ----------------------------------------------------------------------
+// ---------------------------------------------------------------------------------
+// Amicable numbers: numbers whose sum of divisors is equal to each other (but the numbers are not the same)
+// ---------------------------------------------------------------------------------
 // Find the sum of all amicable numbers below 10000
-// Amicable numbers: numbers whose sum of divisors is equal to each other
 
 #include <iostream>
-#include <vector>
-#include "../extras/helpers.cpp"
-
-bool are_amicable(int a, int b) {
-    return (sum_divisors(a) == b) && (sum_divisors(b) == a);
-}
+#include "../extras/helpers.cpp" // for sum_divisors()
 
 int main() {
+    const int Limit = 1000;
     int amicable_sum = 0;
 
-    for (int i = 1; i < 10000; i++) {
-        int j = sum_divisors(i);
-        if (i != j && i == sum_divisors(j)) {
-            amicable_sum += i;
+    for (int a = 1; a < Limit; a++) {
+        int b = sum_divisors(a);
+        if (a != b && a == sum_divisors(b)) { // make sure a and b aren't the same
+            amicable_sum += a;
         }
     }
 
-    std::cout << "Sum of all amicable numbers under 10,000: " << amicable_sum << std::endl;
+    std::cout << "Sum of all amicable numbers under " << Limit << ": " << amicable_sum << std::endl;
     return 0;
 }
