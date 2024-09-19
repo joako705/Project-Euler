@@ -19,7 +19,7 @@ for n in range(1, 1001):
 for word in words:
     value = 0
     # calculate the current word's value
-    for letter in word.strip('""'): # strip leading and trailing double quotes
+    for letter in word.strip('"'): # strip leading and trailing double quotes
         value += get_alphabet_pos(letter)
     
     # check if the word value is a triangle number

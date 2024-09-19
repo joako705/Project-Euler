@@ -14,7 +14,7 @@ sum_scores = 0
 for i in range(len(names)):
     temp_score = 0
     # go through each letter in the name (with the double quotes removed) and add up their position in the alphabet
-    for letter in names[i].strip('""'):
+    for letter in names[i].strip('"'):
         temp_score += get_alphabet_pos(letter)
     
     temp_score *= i+1 # multiply by the position in the list
