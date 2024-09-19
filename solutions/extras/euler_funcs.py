@@ -6,13 +6,13 @@
 
 from os import path
 
-# uses ord() to convert the letter to it's Unicode representation (ord('A') has to have +1 since Unicode is 0-indexed)
-# it uses that corresponding number to perform arithmetic and return the letters position in the alphabet
+# uses ord() to convert the letter to its Unicode representation (ord() has to have +1 since Unicode is 0-indexed)
+# it subtracts the Unicode representation of 'A'/'a' from that, to find how many positions ahead of A the letter is
 def get_alphabet_pos(letter):
     # uppercase:
-    if 'A' <= letter <= 'Z': return ord(letter) - ord('A') + 1
+    if 'A' <= letter <= 'Z': return ord(letter) - ord('A')+1
     # lowercase:
-    elif 'a' <= letter <= 'z': return ord(letter) - ord('a') + 1
+    elif 'a' <= letter <= 'z': return ord(letter) - ord('a')+1
 
     return -1  # if it doesn't get a letter, return -1
 
