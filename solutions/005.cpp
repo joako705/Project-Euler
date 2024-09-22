@@ -6,7 +6,7 @@
 
 int main() {
     const int N = 20;
-    int num = N; // start at n since the number must be divisible by n
+    int num = N; // start at N since the number must be divisible by N
     
     while (true) {
         bool found = true;

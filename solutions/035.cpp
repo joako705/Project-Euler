@@ -1,44 +1,50 @@
 // Problem URL: https://projecteuler.net/problem=35
-// -----------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------
+// Circular primes: primes that remain prime for all rotations of their digits
+// ---------------------------------------------------------------------------------
 // Find all the circular primes below 1 million
-// Circular primes are primes that remain prime for all rotations of their digits
 
 #include <iostream>
-#include <algorithm>
-#include <vector>
+#include <algorithm> // for std::rotate()
 #include <string>
-#include "extras/euler_funcs.h"
+#include <vector>
+#include "extras/euler_funcs.h" // for find_primes(), is_prime()
 
 std::vector<long long> find_rotations(long long n) {
     std::vector<long long> rotations;
-    std::string num = std::to_string(n);
+    std::string num_str = std::to_string(n);
 
-    for (auto &digit : num) {
-        rotate(num.begin(), num.begin()+1, num.end());
-        rotations.push_back(stoll(num));
+    // std::rotate() takes three iterator arguments: the start of the range, the new start after the rotation, and the end of the range
+    // this for-loop iterates through each digit in num_str and shifts it to the right on each iteration
+    // for example: "123" -> "231" -> "312" (each one getting added to the rotations vector)
+    for (auto &digit : num_str) {
+        std::rotate(num_str.begin(), num_str.begin() + 1, num_str.end());
+        rotations.push_back(std::stoll(num_str)); // after rotating the string, it's converted back to a long long, and added it to the vector
     }
 
     return rotations;
 }
 
 int main() {
-    std::vector<long long> primes = find_primes(1000000);
+    const int PrimeLimit = 1e6;
+    std::vector<long long> primes = find_primes(PrimeLimit);
     std::vector<long long> circulars;
 
-    for (auto &num : primes) {
-        std::vector<long long> rotations = find_rotations(num);
-        std::vector<bool> tests(rotations.size(), true);
+    // for each number in the 'primes' vector, find the number's rotations and check if they're all prime
+    for (auto &prime : primes) {
+        std::vector<long long> rotations = find_rotations(prime);
+        bool all_prime = 0;
 
         for (unsigned int i = 0; i < rotations.size(); i++) {
             if (!is_prime(rotations[i])) {
-                tests[i] = false;
-                break;
+                all_prime = false;
+                break; // if one of the rotations isn't prime, there's no need to check the rest
             }
         }
 
-        if (all_of(tests.begin(), tests.end(), [](bool i) { return i; })) circulars.push_back(num);
+        if (all_prime) circulars.push_back(prime);
     }
 
-    std::cout << "The number of circular primes below 1 million is: " << circulars.size() << std::endl;
+    std::cout << "Number of circular primes below " << PrimeLimit << ": " << circulars.size() << std::endl;
     return 0;
 }

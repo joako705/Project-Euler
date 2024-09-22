@@ -3,10 +3,10 @@
 # Find the sum of the digits of 2^1000
 
 digit_sum = 0
-big_num = 2**1000
+BigNum = 2**1000
 
 # convert the number to a string, iterate through every digit, and add them all up
-num_string = str(big_num)
+num_string = str(BigNum)
 for digit in num_string:
     digit_sum += int(digit)
 

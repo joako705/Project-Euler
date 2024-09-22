@@ -6,7 +6,7 @@
 #include "extras/euler_funcs.h" // for is_prime()
 
 int main() {
-    const int PrimeIndex = 100;
+    const int PrimeIndex = 10001;
     int count = 0, num = 2; // num starts at 2, the first prime number
 
     while (count < PrimeIndex) { 

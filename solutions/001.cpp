@@ -1,6 +1,6 @@
 // Problem URL: https://projecteuler.net/problem=1
 // --------------------------------------------------------------------------------
-// Find the sum of all the multiples of 3 and 5 below 1000
+// Find the sum of all the multiples of 3 and 5 below 1,000
 
 #include <iostream>
 
@@ -13,6 +13,6 @@ int main() {
         if ((i % 3 == 0) || (i % 5 == 0)) sum_multiples += i;
     }
 
-    std::cout << "Sum of all the multiples of 3 and 5 below " << Limit << ": " << sum_multiples << std::endl;
+    std::cout << "Sum of all multiples of 3 and 5 below " << Limit << ": " << sum_multiples << std::endl;
     return 0;
 }

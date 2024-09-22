@@ -5,13 +5,13 @@
 # datetime.date() to handle dates, datetime.timedelta() to do calendar arithemtic (add days)
 from datetime import date, timedelta
 
-start = date(1901, 1, 1)
-end = date(2000, 12, 31)
-current = start
+Start = date(1901, 1, 1)
+End = date(2000, 12, 31)
+current = Start
 sunday_count = 0
 
 # go from the start date to the end date, adding one day each iteration using timedelta()
-while (current != end):
+while (current != End):
     # .day is the day of the month and .weekday() returns an int representing which day of the week it is (0 = monday, 6 = sunday)
     if current.day == 1 and current.weekday() == 6: sunday_count += 1
 

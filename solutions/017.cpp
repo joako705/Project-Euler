@@ -1,6 +1,6 @@
 // Problem URL: https://projecteuler.net/problem=17
 // ---------------------------------------------------------------------------------
-// If all the numbers from to 1 to 1000 (inclusive) were written out in words, how many letters would be used?
+// If all the numbers from to 1 to 1,000 (inclusive) were written out in words, how many letters would be used?
 
 #include <iostream>
 #include <string>
@@ -35,7 +35,7 @@ std::string to_word(int num) {
 
     else if (num >= 20 && num < 100) {
         int ones = num % 10; // find the number in the ones place
-        int tens = int(num / 10); // find the number in the tens place  (cast the result to an int)
+        int tens = int(num / 10); // find the number in the tens place (cast the result to an int)
 
         // if the ones place is a 0, leave it blank; else add a hyphen and that number's value stored in the dictionary
         std::string ones_word = (ones == 0) ? "" : "-" + num_words[ones];
@@ -85,6 +85,7 @@ int main() {
     int letter_count = 0;
 
     for (int i = 1; i <= 1000; i++) {
+        // convert the number to a word, count how many letters are in it, and add it to the count
         letter_count += count_letters(to_word(i));
     }
 

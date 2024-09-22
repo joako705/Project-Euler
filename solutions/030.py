@@ -1,31 +1,32 @@
 # Problem URL: https://projecteuler.net/problem=30
-# -----------------------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------
 # Find the sum of all the numbers that can be written as the sum of the fifth power of their digits
 
-# first, need to figure out when to stop checking numbers and their digits:
-# for digits 1-9, the max any digit raised to the fifth can equal is 9^5
-# therefore, for a number with n digits, the absolute maximum the sum of its digits' fifth powers can be is (9^5)*n
-# however, the value of an n-digit number increases exponentionally as n increases (10^n)
-# so eventually, there'll be an n-digit number that CAN'T be written as the sum of the fifths of its digits, because that would be smaller than the number itself. 
-# so to find the max number of digits that need to be checked, just keep incrementing n_digits until 10^(n_digits-1) is greater than (9^5)*n_digits
+# ---------------------------------------------------------------------------------
+# in order to not check numbers infinitely, a search limit needs to be calculated:
+# for all digits 0-9, the max that any of them raised to the fifth can equal is 9^5.
+# therefore, for a number with n-digits, the absolute maximum the sum of its fifths can be is (9^5)*n.
+# however, the maximum value of an n-digit number increases exponentionally as n increases (10^n).
+# this means that eventually, there'll be an n-digit number that *can't* be written as the sum of its fifths, since that sum would be smaller than the number itself
+# ---------------------------------------------------------------------------------
 
+# to find this limit, n_digits needs to be incremented until the maximum value of an n-digit number is larger than the maximum possible sum of its fifths
 n_digits = 1
-while (((9**5) * n_digits) >= 10**(n_digits-1)):
+while ((9**5) * n_digits >= 10**(n_digits)):
     n_digits += 1
 
-# multiply 9^5 * n_digits-1 to get the max number to check
-search_limit = (9**5) * (n_digits-1)
-sum_fifth_power_digits = 0
-num = 1
+# calculate the maximum possible number that could be written as the sum of its fifths
+search_limit = (9**5) * (n_digits-1) # -1 since when the while loop ends, n_digits will have been incremented one too many times
+answer = 0
 
-while (num < search_limit):
+for num in range(1, search_limit):
     sum_digits = 0
+    
+    # calculate num's sum of fifths
     for digit in str(num):
         sum_digits += int(digit)**5
     
-    if sum_digits == num:
-        sum_fifth_power_digits += num
-    
-    num += 1
+    # check if that sum is equal to the number itself
+    if sum_digits == num: answer += num
 
-print(f"Sum of all the numbers that can be written as the sum of the fifth power of its digits: {sum_fifth_power_digits}")
+print(f"Sum of all the numbers that can be written as the sum of the fifth power of its digits: {answer}")

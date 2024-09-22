@@ -7,10 +7,9 @@
 // Find the starting number (under 1 million) that makes the longest sequence
 
 #include <iostream>
-#include <vector>
 
 int main() {
-    const unsigned int Limit = 1000000;
+    const unsigned int Limit = 1e6;
 
     // unsigned ints since the numbers of the sequence should always be positive
     unsigned int chosen_one = 0;
@@ -18,17 +17,17 @@ int main() {
 
     for (unsigned int i = 2; i < Limit; i++) {
         unsigned long long n = i; // work with n to not mess with the iterator
-        std::vector<unsigned long long> sequence = { n };
+        unsigned int sequence = 0;
 
         while (n != 1) {
             if (n % 2 == 0) n = n/2;
             else n = 3*n + 1;
-            sequence.push_back(n);
+            sequence++;
         }
 
-        if (longest < sequence.size()) { // check the current sequence against the current longest length
-            longest = sequence.size();
-            chosen_one = sequence[0]; // the first element is the starting number
+        if (longest < sequence) { // check the current sequence against the current longest length
+            longest = sequence;
+            chosen_one = i; // the first element is the starting number
         }
     }
 

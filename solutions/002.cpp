@@ -20,7 +20,7 @@ int sum_even_fibs(int limit) {
 }
 
 int main() {
-    const int Limit = 4000000;
+    const int Limit = 4e6;
 
     std::cout << "Sum of all even Fibonacci numbers below " << Limit << ": " << sum_even_fibs(Limit) << std::endl;
     return 0;

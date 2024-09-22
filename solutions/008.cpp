@@ -1,6 +1,6 @@
 // Problem URL: https://projecteuler.net/problem=8
 // --------------------------------------------------------------------------------
-// Find the 13 adjacent digits in the 1000-digit long number that have the biggest product
+// Find the 13 adjacent digits in the 1,000-digit long number that have the biggest product
 
 #include <iostream>
 #include <vector>
@@ -30,12 +30,14 @@ int main() {
         7,1,6,3,6,2,6,9,5,6,1,8,8,2,6,7,0,4,2,8,2,5,2,4,8,3,6,0,0,8,2,3,2,5,7,5,3,0,4,2,0,7,5,2,9,6,3,4,5,0,
     };
     
-    long long biggest_product = 0;
-    long long temp = 1;
+    int biggest_product = 0;
+    int temp = 1;
 
-    for (unsigned int i = 0; i < BigNum.size()-12; i++) { // iterate until the size of the vector-12 to avoid out of bounds when adding 12 in the nested loop
+    // iterate until the vector's size -12 to avoid going out of bounds when adding 12 in the nested loop
+    for (unsigned int i = 0; i < BigNum.size()-12; i++) {
         temp = 1;
-        for (unsigned int j = i; j <= i+12; j++) { // iterate over the current number + the next 12 to get the 13-number product
+        // iterate over the current number + the next 12 to get the 13-number product
+        for (unsigned int j = i; j <= i+12; j++) {
             temp *= BigNum[j];
         }
 

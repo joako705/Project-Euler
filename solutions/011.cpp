@@ -46,7 +46,7 @@ std::vector<int> find_products(const std::vector<std::vector<int>> &Grid) {
 
     // -> diagonally down-right:
     // both i and j have to be added to in order to go down-right
-    // stopping at the 3rd-last row /and/ column
+    // stopping at the 3rd-last row *and* column
     for (int i = 0; i <= rows-4; i++) {
         for (int j = 0; j <= columns-4; j++) {
             products.push_back(Grid[i][j] * Grid[i+1][j+1] * Grid[i+2][j+2] * Grid[i+3][j+3]);
