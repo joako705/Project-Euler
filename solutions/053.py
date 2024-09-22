@@ -1,4 +1,4 @@
-# Problem URL: https://projecteuler.net/problem=40
+# Problem URL: https://projecteuler.net/problem=53
 # ---------------------------------------------------------------------------------
 # In combinatorics, nCr ("from n choose r") = n! / (r! * (n-r)!), where r <= n
 # ---------------------------------------------------------------------------------
